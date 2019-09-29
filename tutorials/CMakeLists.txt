@@ -13,7 +13,9 @@ include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
 set(SOURCES
     src/main.cpp
     src/game.cpp
+    src/texturemanager.cpp
     include/game.hpp
+    include/texturemanager.hpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

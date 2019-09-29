@@ -1,5 +1,9 @@
 #include "game.hpp"
+#include "texturemanager.hpp"
 #include <iostream>
+
+SDL_Texture* player_texture;
+SDL_Rect source_rectangle, destination_rectangle;
 
 Game::Game()
 {
@@ -43,6 +47,8 @@ void Game::init(const char* title, int x_pos, int y_pos, int width, int height, 
     {
         is_running = false;
     }
+
+    player_texture = TextureManager::loadTexture("assets/player", renderer);
 }
 
 void Game::handleEvents()
@@ -63,12 +69,23 @@ void Game::handleEvents()
 void Game::update()
 {
     count++;
+
+    // height = 600, width = 450
+    destination_rectangle.h = 150;
+    destination_rectangle.w = 200;
+
+    destination_rectangle.x = count;
+
     std::cout << count << std::endl;
 }
 
 void Game::render()
 {
     SDL_RenderClear(renderer);
+
+    SDL_RenderCopy(renderer, player_texture, NULL, &destination_rectangle);
+
+
     SDL_RenderPresent(renderer);
 }
 

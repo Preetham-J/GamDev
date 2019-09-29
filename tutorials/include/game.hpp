@@ -1,7 +1,7 @@
 #ifndef game_hpp
 #define game_hpp
 #include "SDL2/SDL.h"
-#include <iostream>
+#include "SDL2/SDL_image.h"
 
 class Game
 {
