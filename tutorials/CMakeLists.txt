@@ -15,9 +15,13 @@ set(SOURCES
     src/game.cpp
     src/texturemanager.cpp
     src/gameobject.cpp
+    src/map.cpp
     include/game.hpp
     include/texturemanager.hpp
     include/gameobject.hpp
+    include/map.hpp
+    include/ecs.hpp
+    include/components.hpp
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})

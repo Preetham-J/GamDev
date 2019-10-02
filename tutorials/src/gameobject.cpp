@@ -27,15 +27,15 @@ void GameObject::update()
     x_pos++;
     y_pos++;    
 
-    source_rectangle.h = 450;
-    source_rectangle.w = 600;
+    source_rectangle.h = 32;
+    source_rectangle.w = 32;
     source_rectangle.x = 0;
     source_rectangle.y = 0;
 
     destination_rectangle.x = x_pos;
     destination_rectangle.y = y_pos;
-    destination_rectangle.w = source_rectangle.w / 2;
-    destination_rectangle.h = source_rectangle.h / 2;
+    destination_rectangle.w = source_rectangle.w * 2;
+    destination_rectangle.h = source_rectangle.h * 2;
 }
 
 void GameObject::render()
